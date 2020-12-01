@@ -59,7 +59,12 @@ source $DOT/eval.zsh
 source $DOT/keybindings.zsh
 
 if [[ -v WSL_DISTRO_NAME ]] then
-  source $DOT/wsl.zsh
+  source $DOT/wsl/wsl.zsh
+fi
+
+CURRENT_OS=$(uname)
+if [[ CURRENT_OS -eq "Darwin" ]] then
+  source $DOT/osx/osx.zsh
 fi
 
 WORK_HOSTNAME="cwong-mbp"
