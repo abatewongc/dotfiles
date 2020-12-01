@@ -2,6 +2,9 @@
 
 skip_global_compinit=1
 
+module_path+=( "$HOME/.zinit/bin/zmodules/Src" )
+zmodload zdharma/zplugin
+
 # Powerlevel10k Instant Prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -26,9 +29,12 @@ zinit wait lucid light-mode for \
   OMZ::lib/grep.zsh \
   OMZ::lib/spectrum.zsh \
   OMZ::plugins/git/git.plugin.zsh \
-  OMZ::plugins/pyenv/pyenv.plugin.zsh \
-  OMZ::plugins/jenv/jenv.plugin.zsh \
   OMZ::plugins/gnu-utils/gnu-utils.plugin.zsh
+
+# load jenv, pyenv
+zinit wait"!0" lucid light-mode svn for \
+  OMZ::plugins/jenv \
+  OMZ::plugins/pyenv
 
 zinit wait lucid light-mode for \
   zsh-users/zsh-history-substring-search \

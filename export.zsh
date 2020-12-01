@@ -10,6 +10,8 @@ export EDITOR="vi"
 export AWS_PAGER=""
 export STEAM_HOME="/Users/cwong/Library/Application Support/Steam"
 
+export FUNCNEST=5000
+
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:/user/sbin"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
