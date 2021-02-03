@@ -2,8 +2,22 @@
 
 alias yo="nocorrect yo"
 
+# optionals
+command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
+command -v lsd > /dev/null && alias ls='lsd --tree'
+command -v bashtop > /dev/null && alias top='bashtop'
+command -v bat > /dev/null && alias cat='bat --pager=never'
+command -v bat > /dev/null && alias bat='bat --theme=ansi-dark'
+
+# colors
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias diff='diff --color=auto'
+
 # standard list directory
-alias ll='ls -lah --group-directories-first --color'
+alias ll='ls -lah --group-directories-first'
 alias lll='ls -lhfG'
 # some more ls aliases
 alias la='ls -A'
