@@ -2,6 +2,12 @@
 
 skip_global_compinit=1
 
+if [[ -v WSL_DISTRO_NAME ]] then
+  WSL_HOME=/home/aleosiss
+  WINDOWS_HOME=$HOME
+  HOME=$WSL_HOME
+fi
+
 module_path+=( "$HOME/.zinit/bin/zmodules/Src" )
 zmodload zdharma/zplugin
 
@@ -49,7 +55,12 @@ zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
-export DOT=$HOME/dot
+if [[ -v WSL_DISTRO_NAME ]] then
+  export HOME=$WINDOWS_HOME
+  HOME=$WINDOWS_HOME
+fi
+
+export DOT=$HOME/dotfiles
 
 source $DOT/zsh.zsh
 source $DOT/function.zsh
@@ -63,12 +74,12 @@ if [[ -v WSL_DISTRO_NAME ]] then
 fi
 
 CURRENT_OS=$(uname)
-if [[ CURRENT_OS -eq "Darwin" ]] then
+if [[ "$CURRENT_OS" -eq "Darwin" ]] then
   source $DOT/osx/osx.zsh
 fi
 
 WORK_HOSTNAME="cwong-mbp"
-if [[ $HOSTNAME -eq $WORK_HOSTNAME ]] then
+if [[ "$HOSTNAME" -eq "$WORK_HOSTNAME" ]] then
   source $DOT/work.zsh
 fi
 unset WORK_HOSTNAME
