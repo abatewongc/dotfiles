@@ -74,12 +74,12 @@ if [[ -v WSL_DISTRO_NAME ]] then
 fi
 
 CURRENT_OS=$(uname)
-if [[ "$CURRENT_OS" -eq "Darwin" ]] then
+if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT/os/osx/osx.zsh
 fi
 
 WORK_HOSTNAME="cwong-mbp"
-if [[ "$HOSTNAME" -eq "$WORK_HOSTNAME" ]] then
+if [[ "$HOSTNAME" == "$WORK_HOSTNAME" ]] then
   source $DOT/work.zsh
 fi
 unset WORK_HOSTNAME
