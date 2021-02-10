@@ -19,3 +19,5 @@ export PATH=$PATH:$HOME/Sync/scripts/custom_commands
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/Users/cwong/.local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='🐢'

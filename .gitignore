@@ -2,3 +2,5 @@ work.zsh
 .zshrc.bak
 *.zwc
 paste.json
+
+.vscode/settings.json

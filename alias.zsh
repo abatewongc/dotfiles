@@ -29,7 +29,7 @@ alias sshcd='cd ~/.ssh; cat config'
 alias ssh='ssh -A'
 
 # quickly edit this configuration
-alias reloz='source ~/.zshrc'
+alias reloz='exec zsh'
 alias editz='vim ~/.zshrc'
 alias codez='code ~/.zshrc'
 
@@ -51,7 +51,7 @@ alias sp="spotify"
 
 alias update_hashicorp=~/Sync/Linux/update_hashicorp.sh
 
-alias find='fd'
+#alias find='fd'
 alias tf12='terraform0.12.20'
 alias tf11='terraform0.11.14'
 alias exit='exit 0'
