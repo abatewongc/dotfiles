@@ -25,17 +25,11 @@ export DOT=$HOME/dotfiles
 
 if [[ -v WSL_DISTRO_NAME ]] then
   source $DOT/os/wsl/wsl.zsh
-
-  # only installed z4h on my tower
-  source $DOT/z4h.zsh
 fi
 
 CURRENT_OS=$(uname)
 if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT/os/osx/osx.zsh
-
-  # I broke zinit on my tower
-  source $DOT/zinit.zsh
 fi
 
 WORK_HOSTNAME="cwong-mbp"
@@ -44,6 +38,8 @@ if [[ "$HOSTNAME" == "$WORK_HOSTNAME" ]] then
 fi
 unset WORK_HOSTNAME
 
+source $DOT/z4h.zsh
+source $DOT/zinit.zsh
 source $DOT/zsh.zsh
 source $DOT/function.zsh
 source $DOT/export.zsh

@@ -1,6 +1,3 @@
-module_path+=( "/mnt/c/Users/cblue_000/.zinit/bin/zmodules/Src" )
-zmodload zdharma/zplugin
-
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -27,16 +24,6 @@ zinit wait lucid light-mode for \
 zinit wait"!0" lucid light-mode svn for \
   OMZ::plugins/jenv \
   OMZ::plugins/pyenv
-
-zinit wait lucid light-mode for \
-  zsh-users/zsh-history-substring-search \
-  atinit"zicompinit; zicdreplay" \
-      zdharma/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start" \
-      zsh-users/zsh-autosuggestions
-zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
-  zsh-users/zsh-completions \
-  esc/conda-zsh-completion
 
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
