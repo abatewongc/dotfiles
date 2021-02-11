@@ -4,3 +4,5 @@ work.zsh
 paste.json
 
 .vscode/settings.json
+
+.DS_Store

@@ -14,15 +14,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export DOT=$HOME/dotfiles
+export DOT_ZSH=$DOT/zsh
 
 if [[ -v WSL_DISTRO_NAME ]] then
   export HOME=$WINDOWS_HOME
   HOME=$WINDOWS_HOME
 fi
 
+if [[ -v WSL_DISTRO_NAME ]] then
+  source $DOT_ZSH/os/wsl/preinit.zsh
+fi
 
-export DOT=$HOME/dotfiles
-export DOT_ZSH=$DOT/zsh
+CURRENT_OS=$(uname)
+if [[ "$CURRENT_OS" == "Darwin" ]] then
+  source $DOT_ZSH/os/osx/preinit.zsh
+fi
 
 source $DOT_ZSH/z4h.zsh
 source $DOT_ZSH/zinit.zsh
@@ -34,13 +41,12 @@ source $DOT_ZSH/eval.zsh
 source $DOT_ZSH/keybindings.zsh
 
 if [[ -v WSL_DISTRO_NAME ]] then
-  source $DOT_ZSH/os/wsl/wsl.zsh
-  source $DOT_ZSH/os/wsl/z4h.zsh
+  source $DOT_ZSH/os/wsl/postinit.zsh
 fi
 
 CURRENT_OS=$(uname)
 if [[ "$CURRENT_OS" == "Darwin" ]] then
-  source $DOT_ZSH/os/osx/osx.zsh
+  source $DOT_ZSH/os/osx/postinit.zsh
 fi
 
 WORK_HOSTNAME="cwong-mbp"
@@ -52,3 +58,12 @@ unset WORK_HOSTNAME
 # To customize prompt, run `p10k configure` or edit $POWERLEVEL10K_SOURCE
 export POWERLEVEL10K_SOURCE=$DOT_ZSH/.p10k.zsh
 [[ ! -f $POWERLEVEL10K_SOURCE ]] || source $POWERLEVEL10K_SOURCE
+
+if [[ -v WSL_DISTRO_NAME ]] then
+  source $DOT_ZSH/os/wsl/post10k.zsh
+fi
+
+CURRENT_OS=$(uname)
+if [[ "$CURRENT_OS" == "Darwin" ]] then
+  source $DOT_ZSH/os/osx/post10k.zsh
+fi
