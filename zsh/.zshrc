@@ -9,19 +9,8 @@ fi
 
 #--- PRE-INIT BEGIN --------------------------------------------------------------------------------------
 
-if [[ -v WSL_DISTRO_NAME ]] then
-  WSL_HOME=/home/aleosiss
-  WINDOWS_HOME=$HOME
-  HOME=$WSL_HOME
-fi
-
 export DOT=$HOME/dotfiles
 export DOT_ZSH=$DOT/zsh
-
-if [[ -v WSL_DISTRO_NAME ]] then
-  export HOME=$WINDOWS_HOME
-  HOME=$WINDOWS_HOME
-fi
 
 if [[ -v WSL_DISTRO_NAME ]] then
   source $DOT_ZSH/os/wsl/preinit.zsh
