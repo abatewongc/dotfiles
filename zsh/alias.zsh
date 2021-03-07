@@ -2,13 +2,6 @@
 
 alias yo="nocorrect yo"
 
-# optionals
-command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
-command -v lsd > /dev/null && alias ls='lsd --tree'
-command -v bashtop > /dev/null && alias top='bashtop'
-command -v bat > /dev/null && alias cat='bat --pager=never'
-command -v bat > /dev/null && alias bat='bat --theme=ansi-dark'
-
 # colors
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -22,6 +15,13 @@ alias lll='ls -lhfG'
 # some more ls aliases
 alias la='ls -A'
 alias l='ls -CF'
+
+# optionals
+command -v exa > /dev/null && alias ll='exa --group-directories-first --all --long --icons -m --time-style long-iso  --color always'
+command -v exa > /dev/null && alias lt='exa --tree'
+command -v bashtop > /dev/null && alias top='bashtop'
+command -v bat > /dev/null && alias cat='bat --pager=never'
+command -v bat > /dev/null && alias bat='bat --theme=ansi-dark'
 
 # quickly navigate and utilize .ssh
 alias cdssh='cd ~/.ssh; cat config'
