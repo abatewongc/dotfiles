@@ -24,6 +24,7 @@ fi
 
 source $DOT_ZSH/z4h.zsh
 source $DOT_ZSH/zinit.zsh
+source $DOT_ZSH/general.zsh $DOT
 source $DOT_ZSH/zsh.zsh
 source $DOT_ZSH/function.zsh
 source $DOT_ZSH/export.zsh
@@ -63,3 +64,5 @@ if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/post10k.zsh
 fi
 #--- POST-10K END -----------------------------------------------------------------------------------------------------
+
+source $DOT_ZSH/final.zsh

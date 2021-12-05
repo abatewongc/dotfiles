@@ -7,3 +7,5 @@ export EDITOR="vi"
 export AWS_PAGER=""
 
 export FUNCNEST=5000
+
+export PATH="$PATH:~/.local/bin"

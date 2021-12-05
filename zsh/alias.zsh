@@ -20,8 +20,7 @@ alias l='ls -CF'
 command -v exa > /dev/null && alias ll='exa --group-directories-first --all --long --icons -m --time-style long-iso  --color always'
 command -v exa > /dev/null && alias lt='exa --tree'
 command -v bashtop > /dev/null && alias top='bashtop'
-command -v bat > /dev/null && alias cat='bat --pager=never'
-command -v bat > /dev/null && alias bat='bat --theme=ansi-dark'
+command -v bat > /dev/null && alias cat='bat'
 
 # quickly navigate and utilize .ssh
 alias cdssh='cd ~/.ssh; cat config'
