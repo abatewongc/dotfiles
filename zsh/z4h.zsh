@@ -22,14 +22,26 @@ zstyle ':z4h:autosuggestions' forward-char 'accept'
 
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # ssh when connecting to these hosts.
-zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
-zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+#zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
+#zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
 # The default value if none of the overrides above match the hostname.
-zstyle ':z4h:ssh:*'                   enable 'no'
+zstyle ':z4h:ssh:*'                   enable 'yes'
+zstyle ':z4h:ssh:*' ssh-command      command ssh
 
 # Send these files over to the remote host when connecting over ssh to the
 # enabled hosts.
-zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
+#zstyle ':z4h:ssh:*' send-extra-files '~/hello.txt'
+
+function z4h-ssh-configure() {
+    (( z4h_ssh_enable )) || return 0
+    for FILE in $DOT_ZSH/.* $DOT_ZSH/*; do
+        if [ -f "$FILE" ] ; then
+            REL_FILE=${"${FILE}"#"${DOT_ZSH}/"}
+            z4h_ssh_send_files[$FILE]="${HOME}/.dot/zsh/${REL_FILE}"
+        fi
+    done
+    echo "DONE"
+}
 
 # Clone additional Git repositories from GitHub.
 #

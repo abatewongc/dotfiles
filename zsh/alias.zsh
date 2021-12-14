@@ -17,10 +17,12 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # optionals
+command -v exa > /dev/null || echo '[WARN] exa is missing.'
 command -v exa > /dev/null && alias ll='exa --group-directories-first --all --long --icons -m --time-style long-iso  --color always'
 command -v exa > /dev/null && alias lt='exa --tree'
 command -v bashtop > /dev/null && alias top='bashtop'
-command -v bat > /dev/null && alias cat='bat'
+command -v bat > /dev/null || echo '[WARN] bat is missing.'
+command -v bat > /dev/null && alias cat='bat -P'
 
 # quickly navigate and utilize .ssh
 alias cdssh='cd ~/.ssh; cat config'
@@ -48,7 +50,7 @@ alias c="tput reset"
 
 alias sp="spotify"
 
-alias update_hashicorp=~/Sync/Linux/update_hashicorp.sh
+alias update_hashicorp=$SYNC_HOME/Sync/Linux/update_hashicorp.sh
 
 #alias find='fd'
 alias tf12='terraform0.12.20'

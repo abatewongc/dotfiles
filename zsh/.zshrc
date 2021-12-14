@@ -8,8 +8,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #--- PRE-INIT BEGIN --------------------------------------------------------------------------------------
-
-export DOT=$HOME/dotfiles
+export DOT_HOME=".dot"
+export DOT=$HOME/$DOT_HOME
 export DOT_ZSH=$DOT/zsh
 
 if [[ -v WSL_DISTRO_NAME ]] then
@@ -23,7 +23,7 @@ fi
 #--- PRE-INIT END -----------------------------------------------------------------------------------------------------
 
 source $DOT_ZSH/z4h.zsh
-source $DOT_ZSH/zinit.zsh
+#source $DOT_ZSH/zinit.zsh
 source $DOT_ZSH/general.zsh $DOT
 source $DOT_ZSH/zsh.zsh
 source $DOT_ZSH/function.zsh

@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-command -v neofetch > /dev/null && neofetch
+#command -v neofetch > /dev/null && neofetch

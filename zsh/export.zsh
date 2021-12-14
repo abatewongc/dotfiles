@@ -9,3 +9,4 @@ export AWS_PAGER=""
 export FUNCNEST=5000
 
 export PATH="$PATH:~/.local/bin"
+export SDKMAN_DIR="$HOME/.sdkman"
