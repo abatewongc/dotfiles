@@ -3,7 +3,7 @@
 export DOT=$HOME/.dot
 export DOT_ZSH=$DOT/zsh
 
-git clone git clone https://github.com/abatewongc/dotfiles.git $DOT
+git clone https://github.com/abatewongc/dotfiles.git $DOT
 
 # z4h
 if command -v curl >/dev/null 2>&1; then
