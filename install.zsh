@@ -12,8 +12,8 @@ else
   sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
 fi
 echo '' > ~/.zshrc
-echo -n '# source universal dotfiles repository' >> $HOME/.zshrc
-echo -n 'source "$HOME/.dot/zsh/.zshrc"' >> $HOME/.zshrc
+echo '# source universal dotfiles repository' >> $HOME/.zshrc
+echo 'source "$HOME/.dot/zsh/.zshrc"' >> $HOME/.zshrc
 
 # misc
 cp $DOT/other/.tmux.conf $HOME/.tmux.conf
