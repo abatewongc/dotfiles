@@ -56,3 +56,5 @@ alias update_hashicorp=$SYNC_HOME/Sync/Linux/update_hashicorp.sh
 alias tf12='terraform0.12.20'
 alias tf11='terraform0.11.14'
 alias exit='exit 0'
+
+alias aws_account_id='aws sts get-caller-identity --query "Account" --output text'

@@ -40,7 +40,9 @@ function removeline() {
 function load_envmgrs() {
   if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
-fi
+  fi
+
+  export PATH="$HOME/.pyenv/shims:$PATH"
 
   pyenv virtualenvwrapper
   export PATH="$HOME/.jenv/bin:$PATH"
@@ -49,4 +51,14 @@ fi
 
 function getip() {
   curl ipinfo.io/ip
+}
+
+function assume_role() {
+  export $(printf "AWS_ACCESS_KEY_ID=%s AWS_SECRET_ACCESS_KEY=%s AWS_SESSION_TOKEN=%s" \
+    $(aws sts assume-role \
+    --role-arn $1 \
+    --role-session-name RoleSession \
+    --query "Credentials.[AccessKeyId,SecretAccessKey,SessionToken]" \
+    --output text))
+  unset AWS_PROFILE
 }
