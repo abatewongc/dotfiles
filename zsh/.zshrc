@@ -45,6 +45,7 @@ fi
 WORK_HOSTNAME="cwong-mbp"
 if [[ "$HOSTNAME" == "$WORK_HOSTNAME" ]] then
   source $DOT_ZSH/work.zsh
+  source $DOT_ZSH/secrets.zsh
 fi
 unset WORK_HOSTNAME
 #--- POST-INIT END ----------------------------------------------------------------------------------------------------

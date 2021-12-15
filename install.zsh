@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-export DOT=$HOME/.dot
+export DOT_NAME=.dot
+export DOT=$HOME/$DOT_NAME
 export DOT_ZSH=$DOT/zsh
 
 git clone https://github.com/abatewongc/dotfiles.git $DOT
@@ -13,7 +14,7 @@ else
 fi
 echo '' > ~/.zshrc
 echo '# source universal dotfiles repository' >> $HOME/.zshrc
-echo 'source "$HOME/.dot/zsh/.zshrc"' >> $HOME/.zshrc
+echo 'source "$HOME/'$DOT_NAME'/zsh/.zshrc"' >> $HOME/.zshrc
 
 # misc
 cp $DOT/other/.tmux.conf $HOME/.tmux.conf

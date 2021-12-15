@@ -37,7 +37,10 @@ function z4h-ssh-configure() {
     for FILE in $DOT_ZSH/.* $DOT_ZSH/*; do
         if [ -f "$FILE" ] ; then
             REL_FILE=${"${FILE}"#"${DOT_ZSH}/"}
-            z4h_ssh_send_files[$FILE]="${HOME}/.dot/zsh/${REL_FILE}"
+            # do not send secrets.zsh
+            if [ "$REL_FILE" != "secrets.zsh" ]; then
+                z4h_ssh_send_files[$FILE]="${HOME}/.dot/zsh/${REL_FILE}"
+            fi
         fi
     done
     echo "DONE"
