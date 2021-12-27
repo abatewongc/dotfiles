@@ -12,6 +12,9 @@ export DOT_HOME=".dot"
 export DOT=$HOME/$DOT_HOME
 export DOT_ZSH=$DOT/zsh
 
+# update dotfiles
+$DOT/scripts/update_dot.sh $DOT > /dev/null
+
 if [[ -v WSL_DISTRO_NAME ]] then
   source $DOT_ZSH/os/wsl/preinit.zsh
 fi
