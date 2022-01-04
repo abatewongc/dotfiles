@@ -62,3 +62,21 @@ function assume_role() {
     --output text))
   unset AWS_PROFILE
 }
+
+function aws_login_with_mfa() {
+  export $(printf "AWS_ACCESS_KEY_ID=%s AWS_SECRET_ACCESS_KEY=%s AWS_SESSION_TOKEN=%s" \
+    $(aws sts get-session-token \
+    --serial-number $1 \
+    --token-code $2 \
+    --query "Credentials.[AccessKeyId,SecretAccessKey,SessionToken]" \
+    --output text))
+
+  #echo $AWS_PROFILE >> ~/.aws/credential_stack
+  unset AWS_PROFILE
+}
+
+function aws_unset_credentials() {
+  unset AWS_ACCESS_KEY_ID
+  unset AWS_SECRET_ACCESS_KEY
+  unset AWS_SESSION_TOKEN
+}
