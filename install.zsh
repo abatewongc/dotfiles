@@ -21,10 +21,16 @@ cp $DOT/other/.tmux.conf $HOME/.tmux.conf
 
 # rust
 curl https://sh.rustup.rs -sSf | sh
-cargo install ripgrep bat tokei fd-find procs exa tealdeer
+cargo install ripgrep bat tokei fd-find procs exa tealdeer bottom
 
 # sdkman
-curl -s "https://get.sdkman.io" | zsh
+curl -s "https://get.sdkman.io" | bash
+
+# python
+(
+  git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
+  cd ~/.pyenv && src/configure && make -C src
+)
 
 # finally
 exec zsh

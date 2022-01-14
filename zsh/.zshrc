@@ -13,7 +13,7 @@ export DOT=$HOME/$DOT_HOME
 export DOT_ZSH=$DOT/zsh
 
 # update dotfiles
-$DOT/scripts/update_dot.sh $DOT > /dev/null
+#detach $DOT/scripts/update_dot.sh $DOT > /dev/null 2>&1 &
 
 if [[ -v WSL_DISTRO_NAME ]] then
   source $DOT_ZSH/os/wsl/preinit.zsh
@@ -57,7 +57,7 @@ unset WORK_HOSTNAME
 export POWERLEVEL10K_SOURCE=$DOT_ZSH/.p10k.zsh
 [[ ! -f $POWERLEVEL10K_SOURCE ]] || source $POWERLEVEL10K_SOURCE
 
-#--- POST-10K BEGIN ---------------------------------------------------------------------------------------------------
+#--- POST-PL10K BEGIN ---------------------------------------------------------------------------------------------------
 
 if [[ -v WSL_DISTRO_NAME ]] then
   source $DOT_ZSH/os/wsl/post10k.zsh
@@ -67,6 +67,6 @@ CURRENT_OS=$(uname)
 if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/post10k.zsh
 fi
-#--- POST-10K END -----------------------------------------------------------------------------------------------------
+#--- POST-PL10K END -----------------------------------------------------------------------------------------------------
 
 source $DOT_ZSH/final.zsh
