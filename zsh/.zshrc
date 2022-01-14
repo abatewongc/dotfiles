@@ -45,7 +45,7 @@ if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/postinit.zsh
 fi
 
-WORK_HOSTNAME="cwong-mbp"
+WORK_HOSTNAME="Macbook-Pro"
 if [[ "$HOSTNAME" == "$WORK_HOSTNAME" ]] then
   source $DOT_ZSH/work.zsh
   source $DOT_ZSH/secrets.zsh
