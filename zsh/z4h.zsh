@@ -76,3 +76,5 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 set -g mouse on
+
+zstyle ':z4h:ssh:meerkat' enable no

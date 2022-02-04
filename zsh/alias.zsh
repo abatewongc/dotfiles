@@ -61,4 +61,4 @@ alias exit='exit 0'
 
 alias aws_account_id='aws sts get-caller-identity --query "Account" --output text'
 
-alias kubectl='kc'
+alias kc='kubectl'

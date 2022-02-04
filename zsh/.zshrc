@@ -34,6 +34,7 @@ source $DOT_ZSH/export.zsh
 source $DOT_ZSH/alias.zsh
 source $DOT_ZSH/eval.zsh
 source $DOT_ZSH/keybindings.zsh
+source $DOT_ZSH/secrets.zsh
 
 #--- POST-INIT BEGIN --------------------------------------------------------------------------------------------------
 if [[ -v WSL_DISTRO_NAME ]] then
@@ -48,7 +49,7 @@ fi
 WORK_HOSTNAME="Macbook-Pro"
 if [[ "$HOSTNAME" == "$WORK_HOSTNAME" ]] then
   source $DOT_ZSH/work.zsh
-  source $DOT_ZSH/secrets.zsh
+  source $DOT_ZSH/work_secrets.zsh
 fi
 unset WORK_HOSTNAME
 #--- POST-INIT END ----------------------------------------------------------------------------------------------------

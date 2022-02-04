@@ -19,8 +19,11 @@ z4h bindkey z4h-cd-forward Alt+Right  # cd into the next directory
 z4h bindkey z4h-cd-up      Alt+Up     # cd into the parent directory
 z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
 
-alias explorer='explorer.exe `wslpath -w "$PWD"`'
 alias ex='explorer'
+function explorer () {
+	explorer.exe `wslpath -w "$1"`
+}
+
 # Copy .ssh
 upd_ssh(){
 	rm -rf ~/.ssh
@@ -36,5 +39,8 @@ export PATH="$PATH:/mnt/c/Windows/"
 export CARGO_HOME=$HOME/.cargo
 export RUSTUP_HOME=$HOME/.rustup
 export PATH="$PATH:$CARGO_HOME"
+export PATH="$PATH:$HOME/go/bin"
+export SYNC="/mnt/w/Sync"
+
 
 alias mhw='/mnt/h/SteamLibrary/steamapps/common/Monster\ Hunter\ World/mhwreshadeinjectorhelper.exe'
