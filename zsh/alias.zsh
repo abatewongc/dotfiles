@@ -40,6 +40,7 @@ alias codez='code ~/.zshrc'
 alias "tmux-kill-all"="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 alias @@='$($(fc -ln -1) |& tail -1)'
 alias tmuxa='tmux attach -t'
+alias tmuxn='tmux new -s'
 
 # remove key quickly
 alias removekey="ssh-keygen -R"

@@ -23,8 +23,9 @@ zstyle ':z4h:autosuggestions' forward-char 'accept'
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # ssh when connecting to these hosts.
 #zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
-#zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+zstyle ':z4h:ssh:34.219.20.186' enable no
 # The default value if none of the overrides above match the hostname.
+
 zstyle ':z4h:ssh:*'                   enable 'yes'
 zstyle ':z4h:ssh:*' ssh-command      command ssh
 
