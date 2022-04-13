@@ -63,3 +63,7 @@ alias exit='exit 0'
 alias aws_account_id='aws sts get-caller-identity --query "Account" --output text'
 
 alias kc='kubectl'
+
+# use the correct pip
+alias pip='python -m pip'
+alias ytdl='youtube-dl'

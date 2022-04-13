@@ -26,9 +26,13 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export STEAM_HOME="/Users/cwong/Library/Application Support/Steam"
+export STEAM_HOME="$HOME/Library/Application Support/Steam"
 export PATH="$PATH:/user/sbin"
 export PATH=$PATH:$HOME/Sync/scripts/custom_commands
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="/Users/cwong/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+export PYTHONPATH="."
+
+alias updatedb='/usr/libexec/locate.updatedb'

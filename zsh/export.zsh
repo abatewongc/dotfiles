@@ -5,7 +5,7 @@ export HOSTNAME="$(hostname)"
 export SHELL="$(which zsh)" 
 export EDITOR="vi"
 export AWS_PAGER=""
-export AWS_DEFAULT_REGION="us-east-1"
+export AWS_DEFAULT_REGION="us-west-2"
 
 
 export FUNCNEST=5000
