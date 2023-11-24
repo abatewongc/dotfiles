@@ -17,13 +17,15 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # optionals
-command -v exa > /dev/null || echo '[WARN] exa is missing.'
-command -v exa > /dev/null && alias ll='exa --group-directories-first --all --long --icons -m --time-style long-iso  --color always'
-command -v exa > /dev/null && alias lt='exa --tree'
+command -v eza > /dev/null || echo '[WARN] eza is missing.'
+command -v eza > /dev/null && alias ll='eza --group-directories-first --all --long --icons -m --time-style long-iso  --color always'
+command -v eza > /dev/null && alias lt='eza --tree'
 command -v btm > /dev/null || echo '[WARN] btm is missing.'
 command -v btm > /dev/null && alias top='btm'
 command -v bat > /dev/null || echo '[WARN] bat is missing.'
 command -v bat > /dev/null && alias cat='bat -P'
+command -v rg  > /dev/null || echo '[WARN] ripgrep is missing.'
+command -v grep > /dev/null && alias grep='rg'
 
 # quickly navigate and utilize .ssh
 alias cdssh='cd ~/.ssh; cat config'
@@ -66,4 +68,4 @@ alias kc='kubectl'
 
 # use the correct pip
 alias pip='python -m pip'
-alias ytdl='youtube-dl'
+alias ytdl='yt-dlp'

@@ -16,12 +16,18 @@ echo '' > ~/.zshrc
 echo '# source universal dotfiles repository' >> $HOME/.zshrc
 echo 'source "$HOME/'$DOT_NAME'/zsh/.zshrc"' >> $HOME/.zshrc
 
+# os-specific installation steps
+apt get update
+apt get install -y build-essential zip unzip curl wget
+
 # misc
 cp $DOT/other/.tmux.conf $HOME/.tmux.conf
 
 # rust
 curl https://sh.rustup.rs -sSf | sh
-cargo install ripgrep bat tokei fd-find procs exa tealdeer bottom
+source $HOME/.cargo/env
+cargo install cargo-quickinstall
+cargo quickinstall ripgrep bat tokei fd-find procs eza tealdeer bottom
 
 # sdkman
 curl -s "https://get.sdkman.io" | bash
@@ -31,6 +37,10 @@ curl -s "https://get.sdkman.io" | bash
   git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
   cd ~/.pyenv && src/configure && make -C src
 )
+
+echo '' > ~/.zshrc
+echo '# source universal dotfiles repository' >> $HOME/.zshrc
+echo 'source "$HOME/'$DOT_NAME'/zsh/.zshrc"' >> $HOME/.zshrc
 
 # finally
 exec zsh

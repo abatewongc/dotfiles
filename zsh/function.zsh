@@ -80,3 +80,7 @@ function aws_unset_credentials() {
   unset AWS_SECRET_ACCESS_KEY
   unset AWS_SESSION_TOKEN
 }
+
+function cdw() {
+  cd "$(wslpath -u $1)"
+}

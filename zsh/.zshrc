@@ -8,6 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #--- PRE-INIT BEGIN --------------------------------------------------------------------------------------
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 export DOT_HOME=".dot"
 export DOT=$HOME/$DOT_HOME
 export DOT_ZSH=$DOT/zsh

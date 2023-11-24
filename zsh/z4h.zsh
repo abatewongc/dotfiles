@@ -79,3 +79,4 @@ setopt no_auto_menu  # require an extra TAB press to open the completion menu
 set -g mouse on
 
 zstyle ':z4h:ssh:meerkat' enable no
+zstyle ':z4h:ssh:aleosiss@centerpoint.localdomain' enable no
