@@ -29,3 +29,4 @@ export MINECRAFT_DIR=/mnt/c/Users/Christian/AppData/Roaming/PrismLauncher/instan
 export MINECRAFT_MOD_DIR=$MINECRAFT_DIR/mods
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" # kubernetes krew
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
