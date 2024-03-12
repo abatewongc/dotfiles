@@ -27,3 +27,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/home/aleosiss/workspace/pacmc/pacmc-0.4.2/bin
 export MINECRAFT_DIR=/mnt/c/Users/Christian/AppData/Roaming/PrismLauncher/instances/fabric-1.15.1-build.6_yarn-0.7.2-build.175/.minecraft
 export MINECRAFT_MOD_DIR=$MINECRAFT_DIR/mods
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" # kubernetes krew

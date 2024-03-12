@@ -39,6 +39,7 @@ source $DOT_ZSH/secrets.zsh
 
 #--- POST-INIT BEGIN --------------------------------------------------------------------------------------------------
 if [[ -v WSL_DISTRO_NAME ]] then
+  export OS="windows"
   source $DOT_ZSH/os/wsl/postinit.zsh
 fi
 
@@ -47,8 +48,8 @@ if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/postinit.zsh
 fi
 
-WORK_HOSTNAME="Christians-MBP.localdomain"
-if [[ "$HOSTNAME" == "$WORK_HOSTNAME" ]] then
+WORK_HOSTNAME=("Christians-MBP.local" "MacBook-Pro.local" "Christians-MBP.localdomain" "MacBook-Pro" "MacBook-Pro.localdomain" "macbook-pro.cloudforest-dragon.ts.net", "christian-macbook-pro.openspace.ai.beta.tailscale.net", "christi7W1CDV4C.localdomain")
+if [[ " ${WORK_HOSTNAME[*]} " =~ " ${HOSTNAME} " ]] then
   source $DOT_ZSH/work.zsh
   source $DOT_ZSH/work_secrets.zsh
 fi

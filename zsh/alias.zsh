@@ -24,8 +24,8 @@ command -v btm > /dev/null || echo '[WARN] btm is missing.'
 command -v btm > /dev/null && alias top='btm'
 command -v bat > /dev/null || echo '[WARN] bat is missing.'
 command -v bat > /dev/null && alias cat='bat -P'
-command -v rg  > /dev/null || echo '[WARN] ripgrep is missing.'
-command -v grep > /dev/null && alias grep='rg'
+command -v rg > /dev/null || echo '[WARN] ripgrep is missing'
+command -v rg > /dev/null && alias grep='rg'
 
 # quickly navigate and utilize .ssh
 alias cdssh='cd ~/.ssh; cat config'
@@ -34,8 +34,7 @@ alias ssh='ssh -A'
 
 # quickly edit this configuration
 alias reloz='exec zsh'
-alias vimz='vim ~/.zshrc'
-alias codez='code ~/.zshrc'
+alias codez="code $DOT"
 
 # TMUX
 # kill all sessions
@@ -68,4 +67,6 @@ alias kc='kubectl'
 
 # use the correct pip
 alias pip='python -m pip'
-alias ytdl='yt-dlp'
+alias ytdl='youtube-dl'
+alias say-locally="echo EMIT SAY"
+alias notify_disc="$DOT/scripts/notify_disc.sh"
