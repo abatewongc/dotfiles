@@ -22,11 +22,14 @@ export PATH="$PATH:~/.local/bin"
 export SDKMAN_DIR="$HOME/.sdkman"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 export PATH=$PATH:/home/aleosiss/workspace/pacmc/pacmc-0.4.2/bin
 export MINECRAFT_DIR=/mnt/c/Users/Christian/AppData/Roaming/PrismLauncher/instances/fabric-1.15.1-build.6_yarn-0.7.2-build.175/.minecraft
 export MINECRAFT_MOD_DIR=$MINECRAFT_DIR/mods
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" # kubernetes krew
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+
+export OOF_OUTPUT_DIR="~/workspace/oofgen/screenshots"
+export OOF_TEXTURE="~/Downloads/red.png"

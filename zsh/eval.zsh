@@ -8,3 +8,4 @@ command -v ferium > /dev/null && eval "$(ferium complete bash)" > /dev/null
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 source ~/.zsh/zsh-magic-dashboard/magic_dashboard.zsh
+eval "$(zoxide init --cmd cd zsh)"

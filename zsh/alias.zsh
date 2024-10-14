@@ -70,3 +70,4 @@ alias pip='python -m pip'
 alias ytdl='youtube-dl'
 alias say-locally="echo EMIT SAY"
 alias notify_disc="$DOT/scripts/notify_disc.sh"
+alias godot="/Applications/Godot.app/Contents/MacOS/Godot"

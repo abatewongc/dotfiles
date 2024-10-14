@@ -84,3 +84,23 @@ function aws_unset_credentials() {
 function cdw() {
   cd "$(wslpath -u $1)"
 }
+
+function kc_get_containers() {
+  kubectl get pod $1 -o="custom-columns=NAME:.metadata.name,INIT-CONTAINERS:.spec.initContainers[*].name,CONTAINERS:.spec.containers[*].name"
+}
+
+s_pushd() {
+  builtin pushd "$@" > /dev/null
+}
+
+s_popd() {
+  builtin popd "$@" > /dev/null
+}
+
+function run_logging_cmd() {
+  LIGHTBLUE='\033[1;34m'
+  NC='\033[0m' # No Color
+
+  echo -e "${LIGHTBLUE}$@${NC}"
+  eval "$@"
+}

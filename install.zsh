@@ -19,6 +19,7 @@ echo 'source "$HOME/'$DOT_NAME'/zsh/.zshrc"' >> $HOME/.zshrc
 # os-specific installation steps
 apt get update
 apt get install -y build-essential zip unzip curl wget
+#sbrew install librespeed-cli
 
 # misc
 cp $DOT/other/.tmux.conf $HOME/.tmux.conf

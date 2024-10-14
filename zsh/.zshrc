@@ -48,10 +48,13 @@ if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/postinit.zsh
 fi
 
-WORK_HOSTNAME=("Christians-MBP.local" "MacBook-Pro.local" "Christians-MBP.localdomain" "MacBook-Pro" "MacBook-Pro.localdomain" "macbook-pro.cloudforest-dragon.ts.net", "christian-macbook-pro.openspace.ai.beta.tailscale.net", "christi7W1CDV4C.localdomain")
+WORK_HOSTNAME=("openspace-m3.local", "openspace-m3.fios-router.home", "openspace-m3.local")
 if [[ " ${WORK_HOSTNAME[*]} " =~ " ${HOSTNAME} " ]] then
   source $DOT_ZSH/work.zsh
   source $DOT_ZSH/work_secrets.zsh
+  echo "loading $WORK shell add-ons"
+else
+  echo "Not on a work machine, hostname is $HOSTNAME, not found in $WORK_HOSTNAME"
 fi
 unset WORK_HOSTNAME
 #--- POST-INIT END ----------------------------------------------------------------------------------------------------
