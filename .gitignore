@@ -1,6 +1,7 @@
 work.zsh
 secrets.zsh
 work_secrets.zsh
+work_hostnames.zsh
 .zshrc.bak
 *.zwc
 paste.json

@@ -48,7 +48,7 @@ if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/postinit.zsh
 fi
 
-WORK_HOSTNAME=("openspace-m3.local", "openspace-m3.fios-router.home", "openspace-m3.local")
+source $DOT_ZSH/work_hostnames.zsh
 if [[ " ${WORK_HOSTNAME[*]} " =~ " ${HOSTNAME} " ]] then
   source $DOT_ZSH/work.zsh
   source $DOT_ZSH/work_secrets.zsh
