@@ -54,11 +54,7 @@ alias c="tput reset"
 
 alias sp="spotify"
 
-alias update_hashicorp=$SYNC_HOME/Sync/Linux/update_hashicorp.sh
-
 #alias find='fd'
-alias tf12='terraform0.12.20'
-alias tf11='terraform0.11.14'
 alias exit='exit 0'
 
 alias aws_account_id='aws sts get-caller-identity --query "Account" --output text'
@@ -71,3 +67,4 @@ alias ytdl='youtube-dl'
 alias say-locally="echo EMIT SAY"
 alias notify_disc="$DOT/scripts/notify_disc.sh"
 alias godot="/Applications/Godot.app/Contents/MacOS/Godot"
+alias ktx='kubectx'

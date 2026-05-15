@@ -16,11 +16,12 @@ export DOT_ZSH=$DOT/zsh
 # update dotfiles
 #detach $DOT/scripts/update_dot.sh $DOT > /dev/null 2>&1 &
 
+CURRENT_OS=$(uname)
+
 if [[ -v WSL_DISTRO_NAME ]] then
   source $DOT_ZSH/os/wsl/preinit.zsh
 fi
 
-CURRENT_OS=$(uname)
 if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/preinit.zsh
 fi
@@ -43,7 +44,6 @@ if [[ -v WSL_DISTRO_NAME ]] then
   source $DOT_ZSH/os/wsl/postinit.zsh
 fi
 
-CURRENT_OS=$(uname)
 if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/postinit.zsh
 fi
@@ -69,7 +69,6 @@ if [[ -v WSL_DISTRO_NAME ]] then
   source $DOT_ZSH/os/wsl/post10k.zsh
 fi
 
-CURRENT_OS=$(uname)
 if [[ "$CURRENT_OS" == "Darwin" ]] then
   source $DOT_ZSH/os/osx/post10k.zsh
 fi

@@ -104,3 +104,51 @@ function run_logging_cmd() {
   echo -e "${LIGHTBLUE}$@${NC}"
   eval "$@"
 }
+
+uuid2() {
+    uuidgen | tr -d '\n' | pbcopy && pbpaste
+}
+
+uuid() {
+  uuidgen | xxd -r -p | base64 | tr '/+' '_-' | tr -d '='
+}
+
+alias urlid="uuidgen | xxd -r -p | base64 |tr '/+' '_-' | tr -d '=' | pbcopy && pbpaste"
+alias ctime="echo \"$(date +%s)000\" | pbcopy && pbpaste"
+
+# ai generated
+parse_json_logs() {
+    sed -E 's/^(.*): (\{.*\})$/\1|\2/' | while IFS='|' read -r prefix json; do
+        if echo "$json" | jq -e . >/dev/null 2>&1; then
+            message=$(echo "$json" | jq -r '.message')
+            echo "$prefix: $message"
+        else
+            # If not valid JSON, output the original (reconstructed) line
+            echo "$prefix: $json"
+        fi
+    done
+}
+
+# Convert UUID to URL-safe base64 format
+uuid_to_url() {
+  local uuid_str="$1"
+
+  if [ -z "$uuid_str" ]; then
+    echo "Usage: uuid_to_url <uuid>" >&2
+    return 1
+  fi
+
+  python3 ~/.dot/scripts/uuid_converter.py encode "$uuid_str"
+}
+
+# Convert URL-safe base64 format back to UUID
+url_to_uuid() {
+  local url_str="$1"
+
+  if [ -z "$url_str" ]; then
+    echo "Usage: url_to_uuid <url_base64_string>" >&2
+    return 1
+  fi
+
+  python3 ~/.dot/scripts/uuid_converter.py decode "$url_str"
+}
