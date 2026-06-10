@@ -68,3 +68,5 @@ alias say-locally="echo EMIT SAY"
 alias notify_disc="$DOT/scripts/notify_disc.sh"
 alias godot="/Applications/Godot.app/Contents/MacOS/Godot"
 alias ktx='kubectx'
+
+alias urlid="uuidgen | xxd -r -p | base64 |tr '/+' '_-' | tr -d '=' | pbcopy && pbpaste"

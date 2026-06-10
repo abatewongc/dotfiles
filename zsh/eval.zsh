@@ -21,7 +21,7 @@ if [[ -z "$SSH_AUTH_SOCK" ]]; then
   eval "$(ssh-agent -s)" > /dev/null
 fi
 
-command -v ferium > /dev/null && eval "$(ferium complete bash)" > /dev/null
+#command -v ferium > /dev/null && eval "$(ferium complete bash)" > /dev/null
 
 # Lazy-load SDKMAN: only initializes when sdk/java/gradle/mvn is first called
 if [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
@@ -36,5 +36,5 @@ if [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
   function mvn() { unfunction sdk java gradle mvn; source "$HOME/.sdkman/bin/sdkman-init.sh"; mvn "$@"; }
 fi
 
-source ~/.zsh/zsh-magic-dashboard/magic_dashboard.zsh
+#source ~/.zsh/zsh-magic-dashboard/magic_dashboard.zsh
 eval "$(zoxide init --cmd cd zsh)"

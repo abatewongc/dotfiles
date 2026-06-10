@@ -1,7 +1,7 @@
 #!/bin/zsh
 export NODE_ENV="dev"
 
-export HOSTNAME="$(hostname)"
+export HOSTNAME=$HOST
 export SHELL="$(which zsh)"
 export EDITOR="vi"
 export AWS_PAGER=""
@@ -14,7 +14,6 @@ export FUNCNEST=5000
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 # pyenv PATH is set in eval.zsh lazy-loader
 
-export PATH="$PATH:~/.local/bin"
 # SDKMAN_DIR is set in eval.zsh lazy-loader
 export PATH=$PATH:/home/aleosiss/workspace/pacmc/pacmc-0.4.2/bin
 export MINECRAFT_DIR=/mnt/c/Users/Christian/AppData/Roaming/PrismLauncher/instances/fabric-1.15.1-build.6_yarn-0.7.2-build.175/.minecraft
@@ -26,7 +25,7 @@ export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 export OOF_OUTPUT_DIR="~/workspace/oofgen/screenshots"
 export OOF_TEXTURE="~/Downloads/red.png"
 
-path+=("~/$DOT/scripts")                                                                                                      
+path+=("$DOT/scripts")
 
 # Lazy-load NVM: only initializes when nvm/node/npm/npx is first called
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

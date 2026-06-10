@@ -113,8 +113,9 @@ uuid() {
   uuidgen | xxd -r -p | base64 | tr '/+' '_-' | tr -d '='
 }
 
-alias urlid="uuidgen | xxd -r -p | base64 |tr '/+' '_-' | tr -d '=' | pbcopy && pbpaste"
-alias ctime="echo \"$(date +%s)000\" | pbcopy && pbpaste"
+function ctime() {
+  echo "$(date +%s)000" | pbcopy && pbpaste
+}
 
 # ai generated
 parse_json_logs() {
