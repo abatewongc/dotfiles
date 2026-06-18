@@ -36,3 +36,22 @@ export PATH="/usr/local/sbin:$PATH"
 export PYTHONPATH="."
 
 alias updatedb='/usr/libexec/locate.updatedb'
+
+alias godot="/Applications/Godot.app/Contents/MacOS/Godot"
+alias urlid="uuidgen | xxd -r -p | base64 |tr '/+' '_-' | tr -d '=' | pbcopy && pbpaste"
+
+function push_terminate_self_to_clipboard() {
+  echo "aws ec2 terminate-instances --instance-ids \`curl http://169.254.169.254/latest/meta-data/instance-id\` --region=us-east-1" | pbcopy
+}
+
+function removeline() {
+	sed -i '' "$1"d $2
+}
+
+uuid2() {
+    uuidgen | tr -d '\n' | pbcopy && pbpaste
+}
+
+function ctime() {
+  echo "$(date +%s)000" | pbcopy && pbpaste
+}

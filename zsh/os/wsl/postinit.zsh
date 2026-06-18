@@ -24,10 +24,13 @@ function explorer () {
 	explorer.exe `wslpath -w "$1"`
 }
 
+function cdw() {
+  cd "$(wslpath -u $1)"
+}
+
 function intellij () {
 	"/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2023.1.2/bin/idea64.exe" `wslpath -w "$1"`
 }
-
 
 # Copy .ssh
 upd_ssh(){
@@ -36,11 +39,6 @@ upd_ssh(){
 	chmod 600 ~/.ssh/*
 }
 
-# Windows Path handling for performance
-#WIN_PATH=$(echo $PATH | tr ':' '\n' | grep '/mnt/c' | tr '\n' ':' | sed 's/.$//')
-#export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/mnt/c' | tr '\n' ':' | sed 's/.$//')
-#export PATH="$PATH:$WIN_PATH"
-
 export PATH="$PATH:/mnt/c/Windows/"
 
 export CARGO_HOME=$HOME/.cargo
@@ -48,5 +46,9 @@ export RUSTUP_HOME=$HOME/.rustup
 export PATH="$PATH:$CARGO_HOME"
 export PATH="$PATH:$HOME/go/bin"
 export SYNC="/mnt/w/sync"
+
+export PATH=$PATH:/home/aleosiss/workspace/pacmc/pacmc-0.4.2/bin
+export MINECRAFT_DIR=/mnt/c/Users/Christian/AppData/Roaming/PrismLauncher/instances/fabric-1.15.1-build.6_yarn-0.7.2-build.175/.minecraft
+export MINECRAFT_MOD_DIR=$MINECRAFT_DIR/mods
 
 alias mhw='/mnt/h/SteamLibrary/steamapps/common/Monster\ Hunter\ World/mhwreshadeinjectorhelper.exe'

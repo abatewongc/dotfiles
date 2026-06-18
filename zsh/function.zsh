@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-function push_terminate_self_to_clipboard() {
-  echo "aws ec2 terminate-instances --instance-ids \`curl http://169.254.169.254/latest/meta-data/instance-id\` --region=us-east-1" | pbcopy
-}
-
 # set terminal tab name
 function tabname() {
 	echo -en "\033]0; "$1" \a"
@@ -31,10 +27,6 @@ function __get_aws_metadata_value() {
   else
     echo ""
   fi
-}
-
-function removeline() {
-	sed -i '' "$1"d $2
 }
 
 function load_envmgrs() {
@@ -81,10 +73,6 @@ function aws_unset_credentials() {
   unset AWS_SESSION_TOKEN
 }
 
-function cdw() {
-  cd "$(wslpath -u $1)"
-}
-
 function kc_get_containers() {
   kubectl get pod $1 -o="custom-columns=NAME:.metadata.name,INIT-CONTAINERS:.spec.initContainers[*].name,CONTAINERS:.spec.containers[*].name"
 }
@@ -105,16 +93,8 @@ function run_logging_cmd() {
   eval "$@"
 }
 
-uuid2() {
-    uuidgen | tr -d '\n' | pbcopy && pbpaste
-}
-
 uuid() {
   uuidgen | xxd -r -p | base64 | tr '/+' '_-' | tr -d '='
-}
-
-function ctime() {
-  echo "$(date +%s)000" | pbcopy && pbpaste
 }
 
 # ai generated

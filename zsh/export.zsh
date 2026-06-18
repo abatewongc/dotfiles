@@ -15,12 +15,8 @@ export PYTHON_CONFIGURE_OPTS="--enable-shared"
 # pyenv PATH is set in eval.zsh lazy-loader
 
 # SDKMAN_DIR is set in eval.zsh lazy-loader
-export PATH=$PATH:/home/aleosiss/workspace/pacmc/pacmc-0.4.2/bin
-export MINECRAFT_DIR=/mnt/c/Users/Christian/AppData/Roaming/PrismLauncher/instances/fabric-1.15.1-build.6_yarn-0.7.2-build.175/.minecraft
-export MINECRAFT_MOD_DIR=$MINECRAFT_DIR/mods
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" # kubernetes krew
-export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 
 export OOF_OUTPUT_DIR="~/workspace/oofgen/screenshots"
 export OOF_TEXTURE="~/Downloads/red.png"

@@ -4,3 +4,5 @@
 # preinit
 #----------------------------------------------------------------------------------------------------------------
 zstyle ':z4h:' iterm2-integration 'yes'
+
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH

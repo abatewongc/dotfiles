@@ -9,13 +9,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 
-# standard list directory
-alias ll='ls -lah --group-directories-first'
-alias lll='ls -lhfG'
-# some more ls aliases
-alias la='ls -A'
-alias l='ls -CF'
-
 # optionals
 command -v eza > /dev/null || echo '[WARN] eza is missing.'
 command -v eza > /dev/null && alias ll='eza --group-directories-first --all --long --icons -m --time-style long-iso  --color always'
@@ -66,7 +59,4 @@ alias pip='python -m pip'
 alias ytdl='youtube-dl'
 alias say-locally="echo EMIT SAY"
 alias notify_disc="$DOT/scripts/notify_disc.sh"
-alias godot="/Applications/Godot.app/Contents/MacOS/Godot"
 alias ktx='kubectx'
-
-alias urlid="uuidgen | xxd -r -p | base64 |tr '/+' '_-' | tr -d '=' | pbcopy && pbpaste"
