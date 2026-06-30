@@ -46,6 +46,7 @@ export RUSTUP_HOME=$HOME/.rustup
 export PATH="$PATH:$CARGO_HOME"
 export PATH="$PATH:$HOME/go/bin"
 export SYNC="/mnt/w/sync"
+export PATH="$PATH:$HOME/.local/share"
 
 export PATH=$PATH:/home/aleosiss/workspace/pacmc/pacmc-0.4.2/bin
 export MINECRAFT_DIR=/mnt/c/Users/Christian/AppData/Roaming/PrismLauncher/instances/fabric-1.15.1-build.6_yarn-0.7.2-build.175/.minecraft

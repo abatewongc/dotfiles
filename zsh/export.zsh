@@ -1,5 +1,5 @@
 #!/bin/zsh
-export NODE_ENV="dev"
+#export NODE_ENV="dev"
 
 export HOSTNAME=$HOST
 export SHELL="$(which zsh)"

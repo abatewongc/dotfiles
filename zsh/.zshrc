@@ -53,7 +53,7 @@ if [[ " ${WORK_HOSTNAME[*]} " =~ " ${HOSTNAME} " ]] then
   source $DOT_ZSH/work.zsh
   source $DOT_ZSH/work_secrets.zsh
   echo "loading $WORK shell add-ons"
-else
+elif [ ${#WORK_HOSTNAME[@]} -ne 0 ]; then
   echo "Not on a work machine, hostname is $HOSTNAME, not found in $WORK_HOSTNAME"
 fi
 unset WORK_HOSTNAME
