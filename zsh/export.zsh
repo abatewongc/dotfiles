@@ -12,12 +12,7 @@ export FUNCNEST=5000
 # required to run py-installer
 # pyenv will build python versions with this flag
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
-# pyenv PATH is set in eval.zsh lazy-loader
-
-# SDKMAN_DIR is set in eval.zsh lazy-loader
-
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" # kubernetes krew
-
 export OOF_OUTPUT_DIR="~/workspace/oofgen/screenshots"
 export OOF_TEXTURE="~/Downloads/red.png"
 

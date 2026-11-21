@@ -29,18 +29,6 @@ function __get_aws_metadata_value() {
   fi
 }
 
-function load_envmgrs() {
-  if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-  fi
-
-  export PATH="$HOME/.pyenv/shims:$PATH"
-
-  pyenv virtualenvwrapper
-  export PATH="$HOME/.jenv/bin:$PATH"
-  eval "$(jenv init -)"
-}
-
 function getip() {
   curl ipinfo.io/ip
 }

@@ -25,7 +25,7 @@ function explorer () {
 }
 
 function cdw() {
-  cd "$(wslpath -u $1)"
+  cd "$(wslpath $1)"
 }
 
 function intellij () {
@@ -53,3 +53,6 @@ export MINECRAFT_DIR=/mnt/c/Users/Christian/AppData/Roaming/PrismLauncher/instan
 export MINECRAFT_MOD_DIR=$MINECRAFT_DIR/mods
 
 alias mhw='/mnt/h/SteamLibrary/steamapps/common/Monster\ Hunter\ World/mhwreshadeinjectorhelper.exe'
+
+alias clip='powershell.exe -noprofile -command "chcp 65001 >\$null; clip.exe"'
+alias past='powershell.exe -noprofile -command Get-Clipboard'

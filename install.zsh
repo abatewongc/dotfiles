@@ -30,8 +30,8 @@ source $HOME/.cargo/env
 cargo install cargo-quickinstall
 cargo quickinstall ripgrep bat tokei fd-find procs eza tealdeer bottom
 
-# sdkman
-curl -s "https://get.sdkman.io" | bash
+# mise
+curl https://mise.run | sh
 
 # python
 (
