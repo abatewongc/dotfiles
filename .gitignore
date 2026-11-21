@@ -11,3 +11,5 @@ paste.json
 .DS_Store
 
 scripts/work/
+
+scripts/__pycache__/
